@@ -3,24 +3,28 @@ import gsap from 'gsap'
 
 const projects = [
     {
-        id: 1,
         name: 'Helioth',
-        img: 'https://images.unsplash.com/photo-1588392382834-a891154bca4d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1510&q=80'
+        img: 'helioth.png'
     },
     {
-        id: 2,
-        name: 'Helioth',
-        img: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1680&q=80'
+        name: 'Cities Destinations',
+        img: 'cities.png'
     },
     {
-        id: 3,
-        name: 'Helioth',
-        img: 'https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80'
+        name: 'Portfolio 2',
+        img: 'portfolio2.png'
     },
     {
-        id: 4,
-        name: 'Helioth',
-        img: 'https://images.unsplash.com/photo-1426604966848-d7adac402bff?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80'
+        name: 'Galaxy Generator',
+        img: 'galaxy.png'
+    },
+    {
+        name: 'JSP',
+        img: 'jsp.png'
+    },
+    {
+        name: 'Astronaut',
+        img: 'astronaut.png'
     },
 ]
 
@@ -53,11 +57,33 @@ void main() {
 `;
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    /// smooth scroll for anchor
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+
+    ///  go to top button
+    const topButton = document.getElementById('topButton')
+    topButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    })
+
+    /// project seletors
+
     const prev = document.getElementById('prev')
     const next = document.getElementById('next')
     const projetDiv = Array.from(document.getElementsByClassName('project') as HTMLCollectionOf<HTMLElement>)
     projetDiv[0].style.display = 'block'
 
+
+    /// three js
     const canvas = document.getElementById('webgl')
     const sizes = { width: window.innerWidth / 2, height: window.innerHeight }
 
@@ -67,15 +93,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const textures = [];
 
     const textureLoader = new THREE.TextureLoader();
-    projects.forEach(el => {
+    projects.reverse().forEach(el => {
         textures.push(textureLoader.load(el.img))
     })
-    // console.log(textures);
-
 
     /** camera **/
     const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 30);
-    camera.position.set(1, (projects.length - 1) * 1.2, 1.4);
+    camera.position.set(1.6, (projects.length - 1) * 1.1, 1.4);
 
 
     /**Planes**/
@@ -133,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
         for (let plane of planes) {
             plane.material.uniforms.uTime.value = elapsedTime;
 
-            if (plane.position.y <= camera.position.y + 0.2 && plane.position.y >= camera.position.y - 0.2) {
+            if (plane.position.y <= camera.position.y + 0.6 && plane.position.y >= camera.position.y - 0.6) {
                 gsap.to(plane.scale, { y: 1.1, x: 1.1, z: 1.1, duration: 0.8 })
                 gsap.to(plane.material.uniforms.opacity, { value: 1, duration: 0.8 });
             } else {
@@ -157,15 +181,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     function changeProject(button) {
-        console.log(projetDiv);
-
         if (animating) {
             return false;
         }
 
         const prevProject = projectNum;
+        const maxCamera = (textures.length - 1) * 3;
 
-        const maxCamera = (textures.length - 1) * 1.2;
         if (button === 'prev') {
             if (camera.position.y < maxCamera) {
                 animating = true;
@@ -174,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 changeDescription(prevProject)
             }
         } else {
-            if (camera.position.y > 1) {
+            if (camera.position.y > 0.6) {
                 animating = true;
                 gsap.to(camera.position, { y: '-=1.2', x: '-=0.2', z: '+=0.2', duration: 0.8, onComplete: () => animating = false });
                 projectNum++
