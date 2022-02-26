@@ -1,0 +1,130 @@
+@import "scss/reset";
+@import "scss/base";
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700;900&display=swap");
+
+@mixin titles($size) {
+  font-size: $size;
+  font-family: Lato;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  font-weight: 600;
+  height: 60px;
+
+  .name,
+  ul li {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+  }
+
+  ul {
+    display: flex;
+    margin-top: 20px;
+
+    li {
+      padding: 0 5vw;
+
+      a {
+        color: black;
+      }
+    }
+  }
+}
+
+header {
+  height: calc(100vh - 60px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    @include titles(7rem);
+    text-align: center;
+  }
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+
+  h2 {
+    @include titles(3rem);
+    margin-bottom: 10rem;
+  }
+
+  .projects {
+    padding: 0 2rem;
+    position: relative;
+
+    .project {
+      display: none;
+      & > div {
+        // border: 1px solid red;
+        overflow: hidden;
+      }
+
+      .wrap_title {
+        margin-bottom: 30px;
+        h3 {
+          @include titles(2rem);
+          animation: displayDescription 0.5s ease-in;
+        }
+      }
+
+      .wrap_description {
+        p {
+          animation: displayDescription 0.5s ease-in;
+        }
+      }
+
+      .wrap_link {
+        margin-top: 30px;
+        p {
+          animation: displayDescription 0.5s ease-in;
+        }
+      }
+    }
+
+    .controls {
+      position: absolute;
+      bottom: 20vh;
+      display: flex;
+
+      button {
+        padding: 20px;
+      }
+    }
+  }
+
+  canvas {
+    // position: absolute;
+    // top: 100vh;
+    // border: 1px solid red;
+  }
+}
+
+@keyframes displayDescription {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
