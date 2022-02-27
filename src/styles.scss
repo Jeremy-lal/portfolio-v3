@@ -1,13 +1,36 @@
 @import "scss/reset";
 @import "scss/base";
-
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@700;900&display=swap");
+
+$secondaryColor: #f3d971;
 
 @mixin titles($size) {
   font-size: $size;
   font-family: Lato;
   font-weight: 900;
   text-transform: uppercase;
+  // color: #f0c733;
+}
+
+@mixin hoverEffet {
+  width: fit-content;
+  list-style: none;
+  overflow-x: hidden;
+  height: 30px;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    margin: auto;
+    background: $secondaryColor;
+    transition: all 0.3s ease-in;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
 }
 
 body::-webkit-scrollbar {
@@ -18,7 +41,33 @@ body::-webkit-scrollbar {
 body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+  background: black;
+  color: white;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: auto 0px;
+  letter-spacing: 2px;
 }
+
+.transition {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: fixed;
+  z-index: 2;
+
+  div {
+    width: 33.33%;
+    height: 100vh;
+    background-color: $secondaryColor;
+  }
+}
+
+// #scroll-container {
+//   width: 100%;
+//   // height: ;
+// }
 
 nav {
   display: flex;
@@ -26,11 +75,15 @@ nav {
   padding: 1rem 2rem;
   font-weight: 600;
   height: 60px;
+  color: $secondaryColor;
+  font-size: 1.3rem;
 
-  .name,
+  text-transform: uppercase;
+  .name {
+    font-weight: bold;
+  }
+
   ul li {
-    font-size: 1.3rem;
-    text-transform: uppercase;
   }
 
   ul {
@@ -38,10 +91,11 @@ nav {
     margin-top: 20px;
 
     li {
+      @include hoverEffet;
       padding: 0 5vw;
 
       a {
-        color: black;
+        color: white;
       }
     }
   }
@@ -53,20 +107,37 @@ header {
   justify-content: center;
   align-items: center;
 
-  h1 {
-    @include titles(7rem);
-    text-align: center;
+  // h1 {
+  //   @include titles(7rem);
+  //   text-align: center;
+
+  .wrap {
+    overflow: hidden;
+    h2 {
+      @include titles(7rem);
+      text-align: center;
+
+      transform: translateY(0px);
+      animation: displayTitle 2s ease-in;
+    }
+    // }
+  }
+}
+
+#project {
+  display: flex;
+  justify-content: space-between;
+  h2 {
+    margin-bottom: 10rem;
   }
 }
 
 section {
+  padding: 1rem 2rem;
   min-height: 100vh;
-  display: flex;
-  justify-content: space-between;
-
   h2 {
     @include titles(3rem);
-    margin-bottom: 10rem;
+    color: $secondaryColor;
   }
 
   .projects {
@@ -85,6 +156,16 @@ section {
         h3 {
           @include titles(2rem);
           animation: displayDescription 0.5s ease-in;
+
+          &::after {
+            content: ".";
+            font-size: 90px;
+            color: $secondaryColor;
+            position: absolute;
+            margin-left: 10px;
+            margin-top: -5px;
+            line-height: 0px;
+          }
         }
       }
 
@@ -109,6 +190,9 @@ section {
 
       button {
         padding: 20px;
+        color: $secondaryColor;
+        font-size: 2rem;
+        transform: scaleX(1.5);
       }
     }
   }
@@ -120,10 +204,76 @@ section {
   }
 }
 
+#about {
+  p:first-of-type {
+    margin-bottom: 30px;
+  }
+  p {
+    text-align: center;
+    font-size: 2rem;
+    color: #80828c;
+    max-width: 80vw;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+    letter-spacing: 2px;
+  }
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+
+#contact {
+  position: relative;
+
+  .mail {
+    font-size: 3rem;
+  }
+
+  ul {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+
+    li {
+      padding: 0 5vw;
+      font-weight: 600;
+      @include hoverEffet;
+    }
+  }
+}
+
 #topButton {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
+  place-self: end;
+  position: sticky;
+  margin-top: 150vh;
+  bottom: 2rem;
+  right: 2rem;
+  display: grid;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  background-color: $secondaryColor;
+  font-size: 2rem;
+
+  transform: translateY(0%);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+#topButton:hover {
+  transform: translateY(-20px);
 }
 
 @keyframes displayDescription {
@@ -131,6 +281,18 @@ section {
     transform: translateY(100%);
   }
   to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes displayTitle {
+  0% {
+    transform: translateY(100%);
+  }
+  70% {
+    transform: translateY(100%);
+  }
+  100% {
     transform: translateY(0);
   }
 }

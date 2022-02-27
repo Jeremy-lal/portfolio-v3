@@ -1,5 +1,9 @@
 import * as THREE from 'three';
 import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Scrollbar from 'smooth-scrollbar';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
     {
@@ -57,6 +61,23 @@ void main() {
 `;
 
 document.addEventListener('DOMContentLoaded', () => {
+    gsap.to(".transition div", {
+        y: "-100%", duration: 0.6, delay: 1, stagger: 0.2, onComplete() {
+            gsap.to('.transition div', { display: 'none' })
+
+        }
+    });
+
+    setTimeout(() => {
+        document.querySelector('body').style.overflow = "visible"
+    }, 2000);
+    // const container = document.querySelector("#scroll-container")
+
+
+
+    // smooth scrolling container
+
+    // Scrollbar.init(document.querySelector('#scroll-container'));
 
     /// smooth scroll for anchor
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -186,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const prevProject = projectNum;
-        const maxCamera = (textures.length - 1) * 3;
+        const maxCamera = textures.length - 1;
 
         if (button === 'prev') {
             if (camera.position.y < maxCamera) {

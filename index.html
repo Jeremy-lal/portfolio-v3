@@ -30,15 +30,17 @@
     <meta property="og:image" content="#">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
-    <div id="scroll_container">
+    <div class="transition">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div id="scroll-container">
 
-
-        <div id="topButton">
-            Top
-        </div>
         <nav id="top">
             <div class="name">Jeremy <br>Lalait</div>
             <ul>
@@ -51,7 +53,16 @@
         </nav>
 
         <header>
-            <h1>Independent <br>Web Developer</h1>
+            <div>
+                <div class="wrap">
+                    <h2>Independent</h2>
+                </div>
+                <div class="wrap">
+                    <h2>Web Developer</h2>
+                </div>
+            </div>
+            <!-- <h1><span class="wrap"><span>Independent</span></span> <br><span class="wrap"><span>Web
+                        Developer</span></span></h1> -->
         </header>
 
         <section id="project">
@@ -167,8 +178,8 @@
                 </div>
 
                 <div class="controls">
-                    <button id='prev'>Prev</button>
-                    <button id='next'>Next</button>
+                    <button id='prev'><i class="fa-solid fa-arrow-left-long"></i></button>
+                    <button id='next'><i class="fa-solid fa-arrow-right-long"></i></button>
                 </div>
             </div>
             <canvas id="webgl"></canvas>
@@ -176,15 +187,44 @@
 
         <section id="about">
             <h2>About</h2>
+
+            <div class="flex">
+                <p> Hello!</p>
+
+                <p> I'm Jérémy, an independent Web DEVELOPER from France.</p>
+
+                <p> I am an ambitious and passionate developper who can create basic sites but also some more creative.
+                    Passionate about web development, I like to discover, experiment and learn new technologies.</p>
+            </div>
+
+
         </section>
 
         <section id="contact">
             <h2>Contact</h2>
+
+            <div class="flex">
+                <div class="mail">
+                    jeremy<span>.</span>lalait<span>@</span>gmail<span>.</span>com
+                </div>
+                <ul>
+                    <li><a href='https://www.linkedin.com/in/j%C3%A9r%C3%A9my-lalait' target="_blank">Linkedin</a></li>
+                    <li><a href='https://github.com/Jeremy-lal' target="_blank">Github</a></li>
+                    <li><a href='https://codepen.io/jeremy-lalait/collections/' target="_blank">Codepen</a></li>
+                    <li><a href='https://jeremy-lalait.notion.site/Lalait-J-r-my-65bf59e2403a447aa579c996f3d13268'
+                            target="_blank">CV</a>
+                    </li>
+                </ul>
+            </div>
+
         </section>
 
 
         <script type="module" src="src/index.ts"></script>
 
+    </div>
+    <div id="topButton">
+        <i class="fa-solid fa-hand-point-up"></i>
     </div>
 </body>
 
