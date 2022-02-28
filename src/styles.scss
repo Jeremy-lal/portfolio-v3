@@ -2,14 +2,16 @@
 @import "scss/base";
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@700;900&display=swap");
 
+$primaryColor: white;
 $secondaryColor: #f3d971;
+// $secondaryColor: #286b08;
+$background: black;
 
 @mixin titles($size) {
   font-size: $size;
   font-family: Lato;
   font-weight: 900;
   text-transform: uppercase;
-  // color: #f0c733;
 }
 
 @mixin hoverEffet {
@@ -41,12 +43,13 @@ body::-webkit-scrollbar {
 body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
-  background: black;
-  color: white;
+  background: $background;
+  color: $primaryColor;
   overflow: hidden;
   display: grid;
   grid-template-columns: auto 0px;
   letter-spacing: 2px;
+  height: 100vh;
 }
 
 .transition {
@@ -64,11 +67,6 @@ body {
   }
 }
 
-// #scroll-container {
-//   width: 100%;
-//   // height: ;
-// }
-
 nav {
   display: flex;
   justify-content: space-between;
@@ -77,13 +75,10 @@ nav {
   height: 60px;
   color: $secondaryColor;
   font-size: 1.3rem;
-
   text-transform: uppercase;
+
   .name {
     font-weight: bold;
-  }
-
-  ul li {
   }
 
   ul {
@@ -95,7 +90,7 @@ nav {
       padding: 0 5vw;
 
       a {
-        color: white;
+        color: $primaryColor;
       }
     }
   }
@@ -107,10 +102,6 @@ header {
   justify-content: center;
   align-items: center;
 
-  // h1 {
-  //   @include titles(7rem);
-  //   text-align: center;
-
   .wrap {
     overflow: hidden;
     h2 {
@@ -120,7 +111,6 @@ header {
       transform: translateY(0px);
       animation: displayTitle 2s ease-in;
     }
-    // }
   }
 }
 
@@ -147,12 +137,11 @@ section {
     .project {
       display: none;
       & > div {
-        // border: 1px solid red;
         overflow: hidden;
       }
 
       .wrap_title {
-        margin-bottom: 30px;
+        margin-bottom: 3rem;
         h3 {
           @include titles(2rem);
           animation: displayDescription 0.5s ease-in;
@@ -171,6 +160,7 @@ section {
 
       .wrap_description {
         p {
+          font-size: 1.3rem;
           animation: displayDescription 0.5s ease-in;
         }
       }
@@ -178,6 +168,7 @@ section {
       .wrap_link {
         margin-top: 30px;
         p {
+          font-size: 1.3rem;
           animation: displayDescription 0.5s ease-in;
         }
       }
@@ -196,12 +187,6 @@ section {
       }
     }
   }
-
-  canvas {
-    // position: absolute;
-    // top: 100vh;
-    // border: 1px solid red;
-  }
 }
 
 #about {
@@ -211,7 +196,6 @@ section {
   p {
     text-align: center;
     font-size: 2rem;
-    color: #80828c;
     max-width: 80vw;
     margin: 0 auto;
     margin-bottom: 2rem;
@@ -294,5 +278,46 @@ section {
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+.link {
+  a {
+    overflow: hidden;
+    padding: 0 4px;
+    height: 1em;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    letter-spacing: 1px;
+    font-weight: 400;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+
+    &:hover,
+    &:focus {
+      span {
+        -webkit-transform: translateY(-100%);
+        -moz-transform: translateY(-100%);
+        transform: translateY(-100%);
+      }
+    }
+
+    span {
+      position: relative;
+      display: inline-block;
+      -webkit-transition: -webkit-transform 0.3s;
+      -moz-transition: -moz-transform 0.3s;
+      transition: transform 0.3s;
+
+      &::before {
+        position: absolute;
+        top: 100%;
+        content: attr(data-hover);
+        color: $secondaryColor;
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+      }
+    }
   }
 }
