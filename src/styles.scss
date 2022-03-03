@@ -1,17 +1,16 @@
 @import "scss/reset";
 @import "scss/base";
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700;900&display=swap");
 
 $primaryColor: white;
 $secondaryColor: #f3d971;
-// $secondaryColor: #286b08;
 $background: black;
 
 @mixin titles($size) {
   font-size: $size;
-  font-family: Lato;
+  font-family: "Montserrat";
   font-weight: 900;
   text-transform: uppercase;
+  letter-spacing: 4px;
 }
 
 @mixin hoverEffet {
@@ -39,10 +38,9 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
 body {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   background: $background;
   color: $primaryColor;
   overflow: hidden;
