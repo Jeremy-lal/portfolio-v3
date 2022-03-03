@@ -40,6 +40,14 @@ function displayProjects() {
     const canvas = document.getElementById('webgl')
     const sizes = { width: window.innerWidth / 2, height: window.innerHeight }
 
+    if (window.innerWidth < 1200) {
+        sizes.width = window.innerWidth - 80;
+        sizes.height = window.innerHeight / 2;
+    } else {
+        sizes.width = window.innerWidth / 2;
+        sizes.height = window.innerHeight;
+    }
+
     const scene = new THREE.Scene();
 
     /** Textures */
@@ -90,9 +98,19 @@ function displayProjects() {
         el.position.y = i * 1.2;
     })
 
-    group.rotation.y = -0.3;
-    group.rotation.x = -0.2;
-    group.rotation.z = -0.3;
+    if (window.innerWidth < 1200) {
+        group.rotation.y = -0.1;
+        group.rotation.x = -0.2;
+        group.rotation.z = -0.1;
+        camera.position.x = 0.85;
+        camera.position.z = 0.7;
+    } else {
+        group.rotation.y = -0.3;
+        group.rotation.x = -0.2;
+        group.rotation.z = -0.3;
+    }
+
+
 
     /**Renderer**/
     const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
@@ -161,17 +179,17 @@ function displayProjects() {
             projetDiv[prev].style.display = 'none'
             projetDiv[projectNum].style.display = 'block'
         }
-
-
-
-
-
     }
 
 
     window.addEventListener('resize', () => {
-        sizes.width = window.innerWidth;
-        sizes.height = window.innerHeight;
+        if (window.innerWidth < 1200) {
+            sizes.width = window.innerWidth - 80;
+            sizes.height = window.innerHeight / 2;
+        } else {
+            sizes.width = window.innerWidth / 2;
+            sizes.height = window.innerHeight;
+        }
 
         // Update camera
         camera.aspect = sizes.width / sizes.height;

@@ -146,14 +146,9 @@ section {
           @include titles(2rem);
           animation: displayDescription 0.5s ease-in;
 
-          &::after {
-            content: ".";
-            font-size: 90px;
+          i {
             color: $secondaryColor;
-            position: absolute;
-            margin-left: 10px;
-            margin-top: -5px;
-            line-height: 0px;
+            font-size: 1.2rem;
           }
         }
       }
@@ -175,8 +170,6 @@ section {
     }
 
     .controls {
-      position: absolute;
-      bottom: 20vh;
       display: flex;
 
       button {
@@ -318,6 +311,120 @@ section {
         -moz-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
       }
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  #project {
+    h2 {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #project {
+    flex-direction: column;
+
+    canvas {
+      margin: auto;
+    }
+  }
+}
+@media screen and (max-width: 850px) {
+  nav {
+    position: relative;
+
+    ul {
+      position: absolute;
+      bottom: -20px;
+      width: calc(100% - 2rem);
+      justify-content: center;
+    }
+  }
+
+  header {
+    .wrap {
+      h2 {
+        @include titles(5rem);
+      }
+    }
+  }
+
+  #tidio-chat-iframe {
+    inset: auto 2px 55px auto !important;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  html {
+    font-size: 16px;
+  }
+  nav {
+    padding: 1rem;
+
+    ul {
+      bottom: -50px;
+    }
+  }
+
+  header {
+    .wrap {
+      h2 {
+        @include titles(3rem);
+      }
+    }
+  }
+
+  #contact {
+    .mail {
+      font-size: 2rem;
+    }
+
+    ul {
+      position: absolute;
+      bottom: 5px;
+      font-size: 1rem;
+
+      li {
+        padding: 0 2vw;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 530px) {
+  html {
+    font-size: 12px;
+  }
+  header {
+    .wrap {
+      h2 {
+        @include titles(3rem);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 10px;
+  }
+  header {
+    .wrap {
+      h2 {
+        @include titles(2rem);
+      }
+    }
+  }
+
+  #project {
+    flex-direction: column;
+    min-height: 60vh;
+
+    canvas {
+      display: none;
     }
   }
 }
