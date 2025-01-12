@@ -186,6 +186,10 @@ section {
         color: $secondaryColor;
         font-size: 2rem;
         transform: scaleX(1.5);
+
+        svg {
+          width: 30px;
+        }
       }
     }
   }
@@ -256,6 +260,10 @@ section {
   transform: translateY(0%);
   transition: all 0.2s;
   cursor: pointer;
+
+  svg {
+    width: 24px;
+  }
 }
 
 #topButton:hover {
