@@ -1,36 +1,41 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="src/styles.scss" />
-    <link rel="icon" type="image" href="./assets/favicon.png">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <!-- Canonical -->
-    <link rel="canonical" href="https://www.example.com">
-    <!-- Robots -->
-    <meta name="robots" content="noindex, nofollow">
-    <!-- Device -->
-    <!-- <meta name="viwport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"> -->
-    <meta name="Voir leport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5">
     <meta name="format-detection" content="telephone=no">
-    <!-- Title -->
-    <title>Jérémy Lalait</title>
-    <!-- Description -->
-    <meta name="description" content="Home description.">
-    <!-- Social -->
+    
+    <link rel="stylesheet" type="text/css" href="src/styles.scss" />
+    <link rel="icon" type="image/png" href="./assets/favicon.webp">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://jeremylalait.fr/">
+    
+    <!-- Robots -->
+    <meta name="robots" content="index, follow">
+    
+    <!-- Title and Description -->
+    <title>Jérémy Lalait - Développeur Web Freelance</title>
+    <meta name="description" content="Découvrez le portfolio de Jérémy Lalait, développeur web freelance en France.">
+    
+    <!-- Social Media Meta Tags -->
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Portfolio - Jérémy Lalait">
-    <meta name="twitter:description" content="Home description.">
+    <meta name="twitter:description" content="Découvrez le portfolio de Jérémy Lalait, développeur web freelance en France.">
     <meta name="twitter:image" content="#">
+
     <!-- Facebook -->
-    <meta property="og:type" content="site">
-    <meta property="og:url" content="https://www.example.com">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jeremylalait.fr/">
     <meta property="og:title" content="Portfolio - Jérémy Lalait">
-    <meta property="og:description" content="Home description.">
+    <meta property="og:description" content="Découvrez le portfolio de Jérémy Lalait, développeur web freelance en France.">
     <meta property="og:image" content="#">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
@@ -43,13 +48,12 @@
 
     <div>
         <nav>
-            <div class="name">Jeremy <br>Lalait</div>
+            <div class="name">Jérémy <br>Lalait</div>
             <ul>
                 <li><a href="#project">Projets</a></li>
-                <li><a href="#about">à propos</a></li>
+                <li><a href="#about">À propos</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-
             <div class="lang"><a href="index.html">En</a></div>
         </nav>
 
@@ -59,7 +63,7 @@
                     <h2>Développeur Web</h2>
                 </div>
                 <div class="wrap">
-                    <h2>Indépendant </h2>
+                    <h2>Indépendant</h2>
                 </div>
             </div>
         </header>
@@ -68,20 +72,52 @@
             <div class="projects">
                 <h2>Projets</h2>
 
+                <!-- Project Cards -->
                 <div class="project">
                     <div class="wrap_title">
-                        <h3>Helitoh</h3>
+                        <h3>Jaab</h3>
                     </div>
                     <div class="wrap_description">
-                        <p>Helioth est un outil de création de sondages, tests et quiz. Une analyse des résultats est
-                            ensuite possible avec des fonctions statistiques.
-                            Développement de l'outil et de son site vitrine.</p>
+                        <p>Jaab est un cabinet spécialisé dans l’accompagnement des marques pour atteindre leurs objectifs de croissance dans l’écosystème digital. Le projet met en avant une approche globale et agile.<br><br>Développement du site vitrine</p>
                     </div>
-
                     <div class="wrap_link">
-                        <p class="link"> <a href="https://helioth.io/" target="_blank"><span
-                                    data-hover="Voir le site">Voir le
-                                    site</span></a></p>
+                        <p class="link"><a href="https://jaab.co/" target="_blank"><span data-hover="Voir le site">Voir le site</span></a></p>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="wrap_title">
+                        <h3>Miraludo</h3>
+                    </div>
+                    <div class="wrap_description">
+                        <p>Miraludo présente une collection de jeux de société et de puzzles. Le site est conçu pour offrir une expérience accessible et innovante.<br><br>Développement du site E-commerce</p>
+                    </div>
+                    <div class="wrap_link">
+                        <p class="link"><a href="https://miraludo.fr/" target="_blank"><span data-hover="Voir le site">Voir le site</span></a></p>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="wrap_title">
+                        <h3>ACL</h3>
+                    </div>
+                    <div class="wrap_description">
+                        <p>ACL Audit est un cabinet d'expertise comptable et de conseil, qui accompagne les entreprises dans leurs enjeux financiers et stratégiques.<br><br>Développement du site vitrine</p>
+                    </div>
+                    <div class="wrap_link">
+                        <p class="link"><a href="https://acl-audit.eu/" target="_blank"><span data-hover="Voir le site">Voir le site</span></a></p>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="wrap_title">
+                        <h3>Helioth</h3>
+                    </div>
+                    <div class="wrap_description">
+                        <p>Helioth est une application permettant la création de sondages et de tests avec des outils d’analyse statistiques avancées.<br><br>Développement de l'outil et de son site vitrine.</p>
+                    </div>
+                    <div class="wrap_link">
+                        <p class="link"><a href="https://helioth.io/" target="_blank"><span data-hover="Voir le site">Voir le site</span></a></p>
                     </div>
                 </div>
 
@@ -90,137 +126,59 @@
                         <h3>Cities Destinations</h3>
                     </div>
                     <div class="wrap_description">
-                        <p>Ce projet est un side project pour progresser dans le développement créatif. Le desing est
-                            inspiré par Codrops.</p>
+                        <p>Side project inspiré de Codrops, visant à explorer de nouvelles idées créatives dans le développement web.</p>
                     </div>
-
                     <div class="wrap_link">
-                        <p class="link"><a href="https://cities-destinations.netlify.app/" target="_blank"><span
-                                    data-hover="Voir le site">Voir le
-                                    site</span></a></p>
-                        </p>
+                        <p class="link"><a href="https://cities-destinations.netlify.app/" target="_blank"><span data-hover="Voir le site">Voir le site</span></a></p>
                     </div>
                 </div>
 
                 <div class="project">
                     <div class="wrap_title">
-                        <h3>Portfolio précédent</h3>
+                        <h3>Portfolio Précédent</h3>
                     </div>
                     <div class="wrap_description">
-                        <p>Mon dernier portfolio m'a permit d'apprendre beaucoup de concepts sur Three.Js et de
-                            progresser dans le développement créatif.</p>
+                        <p>Mon précédent portfolio m’a permis de progresser dans l’utilisation de Three.js et d’explorer de nouvelles façons de présenter mes projets.</p>
                     </div>
-
                     <div class="wrap_link">
-                        <p class="link"><a href="https://jeremylalait.fr/" target="_blank"><span
-                                    data-hover="Voir le site">Voir le
-                                    site</span></a></p>
-                    </div>
-                </div>
-
-                <div class="project">
-                    <div class="wrap_title">
-                        <h3>Générateur de galaxies</h3>
-                    </div>
-                    <div class="wrap_description">
-                        <p>Ce projet a été un très bon exercice pour comprendre plusieurs fonctionnalités de Three.Js.
-                            Il vient
-                            des cours de Bruno Simon.</p>
-                    </div>
-
-                    <div class="wrap_link">
-                        <p class="link"><a href="https://galaxy-jl.netlify.app/" target="_blank"><span
-                                    data-hover="Voir le site">Voir le
-                                    site</span></a></p>
-                    </div>
-                </div>
-
-                <div class="project">
-                    <div class="wrap_title">
-                        <h3>Jeune Sapeur Pompier Merignac</h3>
-                    </div>
-                    <div class="wrap_description">
-                        <p>Quand j'étais jeune, j'étais un jeune sapeur pompier. Pour remercier l'association, je leur
-                            ai créé un outil permettant de faciliter la communication entre les élèves et les
-                            formateurs.
-                        </p>
-                    </div>
-
-                    <div class="wrap_link">
-                        <p class="link"><a href="http://jspmerignac.fr/#/" target="_blank"><span
-                                    data-hover="Voir le site">Voir le
-                                    site</span></a></p>
-                    </div>
-                </div>
-                <div class="project">
-                    <div class="wrap_title">
-                        <h3>Astronaute tournant</h3>
-                    </div>
-                    <div class="wrap_description">
-                        <p>Oui, un autre projet en Three.Js. Je voulais vraiment le faire après avoir vu le site de
-                            Greta
-                            Thunberg</p>
-                    </div>
-
-                    <div class="wrap_link">
-                        <p class="link"><a href="https://astronaut-threejs.netlify.app/" target="_blank"><span
-                                    data-hover="Voir le site">Voir le
-                                    site</span></a></p>
+                        <p class="link"><a href="https://jeremy-lalait.netlify.app/" target="_blank"><span data-hover="Voir le site">Voir le site</span></a></p>
                     </div>
                 </div>
 
                 <div class="controls">
-                    <button id='prev'><i class="fa-solid fa-arrow-left-long"></i></button>
-                    <button id='next'><i class="fa-solid fa-arrow-right-long"></i></button>
+                    <button id="prev"><i class="fa-solid fa-arrow-left-long"></i></button>
+                    <button id="next"><i class="fa-solid fa-arrow-right-long"></i></button>
                 </div>
             </div>
             <canvas id="webgl"></canvas>
         </section>
 
         <section id="about">
-            <h2>A propos</h2>
-
+            <h2>À propos</h2>
             <div class="flex">
-                <p> Bonjour!</p>
-
-                <p> Je suis Jérémy, un développeur web indépendant originaire de France.</p>
-
-                <p> Je suis un développeur ambitieux et passionné qui sait créer des sites basiques mais aussi des sites
-                    plus créatifs. Passionné de développement web, j'aime découvrir, expérimenter et apprendre de
-                    nouvelles technologies.</p>
+                <p>Bonjour ! Je suis Jérémy, développeur web freelance basé en France.</p>
+                <p>Passionné et ambitieux, je crée des sites web allant des projets simples aux plateformes plus complexes. Curieux et déterminé, j’adore expérimenter de nouvelles technologies pour proposer des solutions modernes et sur-mesure. Mon objectif est de transformer vos idées en expériences web uniques.</p>
             </div>
-
-
         </section>
 
         <section id="contact">
             <h2>Contact</h2>
-
             <div class="flex">
-                <div class="mail">
-                    jeremy<span>.</span>lalait<span>@</span>gmail<span>.</span>com
-                </div>
+                <div class="mail">jeremy<span>.</span>lalait<span>@</span>gmail<span>.</span>com</div>
                 <ul>
-                    <li><a href='https://www.linkedin.com/in/j%C3%A9r%C3%A9my-lalait' target="_blank">Linkedin</a>
-                    </li>
-                    <li><a href='https://github.com/Jeremy-lal' target="_blank">Github</a></li>
-                    <li><a href='https://codepen.io/jeremy-lalait/collections/' target="_blank">Codepen</a></li>
-                    <li><a href='https://jeremy-lalait.notion.site/Lalait-J-r-my-084967b27ca04ce1b13d75c1e38c3a65'
-                            target="_blank">CV</a>
-                    </li>
+                    <li><a href="https://www.linkedin.com/in/j%C3%A9r%C3%A9my-lalait" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://github.com/Jeremy-lal" target="_blank">GitHub</a></li>
+                    <li><a href="https://codepen.io/jeremy-lalait/collections/" target="_blank">CodePen</a></li>
+                    <li><a href="https://jeremy-lalait.notion.site/Lalait-J-r-my-084967b27ca04ce1b13d75c1e38c3a65" target="_blank">CV</a></li>
                 </ul>
             </div>
-
         </section>
     </div>
 
-    <!-- <div id="topButton">
+    <div id="topButton">
         <i class="fa-solid fa-hand-point-up"></i>
-    </div> -->
-
+    </div>
 
     <script type="module" src="src/index.ts"></script>
-    <script src="//code.tidio.co/238dmabt8vgvjy7iqfbdwxap5zd0waxg.js" async></script>
 </body>
-
 </html>

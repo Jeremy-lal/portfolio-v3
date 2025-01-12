@@ -1,5 +1,4 @@
 function smoothAnchor() {
-    /// smooth scroll for anchor
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -10,17 +9,19 @@ function smoothAnchor() {
     });
 }
 
-// function goToTop() {
-//     const topButton = document.getElementById('topButton')
-//     topButton.addEventListener('click', () => {
-//         window.scrollTo({ top: 0, behavior: 'smooth' });
-//     })
-// }
+function goToTop() {
+    const topButton = document.getElementById('topButton');
+
+    if(topButton) {
+        topButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        })
+    };
+}
 
 function initAllScroll() {
     smoothAnchor()
-    // goToTop()
+    goToTop()
 }
-
 
 export { initAllScroll }

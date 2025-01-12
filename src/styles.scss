@@ -143,18 +143,29 @@ section {
         h3 {
           @include titles(2rem);
           animation: displayDescription 0.5s ease-in;
-
-          i {
-            color: $secondaryColor;
-            font-size: 1.2rem;
+          position: relative;
+          display: flex;
+          width: fit-content;
+          
+          &:after {
+            content: "";
+            position: absolute;
+            right: -16px;
+            bottom: 7px;
+            display: block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: $secondaryColor;
           }
         }
       }
 
       .wrap_description {
         p {
-          font-size: 1.3rem;
           animation: displayDescription 0.5s ease-in;
+          font-size: 1.3rem;
+          margin-bottom: 1.3rem;
         }
       }
 

@@ -1,26 +1,26 @@
 export const projects = [
     {
+        name: 'Jaab',
+        img: 'jaab.webp'
+    },
+    {
+        name: 'Miraludo',
+        img: 'miraludo.webp'
+    },
+    {
+        name: 'ACL',
+        img: 'acl.webp'
+    },
+    {
         name: 'Helioth',
-        img: 'helioth.png'
+        img: 'helioth.webp'
     },
     {
         name: 'Cities Destinations',
-        img: 'cities.png'
+        img: 'cities.webp'
     },
     {
         name: 'Portfolio 2',
-        img: 'portfolio2.png'
-    },
-    {
-        name: 'Galaxy Generator',
-        img: 'galaxy.png'
-    },
-    {
-        name: 'JSP',
-        img: 'jsp.png'
-    },
-    {
-        name: 'Astronaut',
-        img: 'astronaut.png'
-    },
+        img: 'portfolio2.webp'
+    }
 ]
